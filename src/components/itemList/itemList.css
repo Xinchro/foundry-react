@@ -1,0 +1,6 @@
+.item-list {
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: auto auto;
+}

@@ -4,4 +4,28 @@
   padding: 0;
   margin: 0;
   background: rgba(200,200,200,0.5);
+  display: grid;
+  grid-template-columns: 95px auto;
+  grid-auto-rows: 100%;
+}
+
+.body img {
+  height: 100%;
+}
+
+.body p {
+}
+
+.data {
+  
+}
+
+.resource {
+  display: inline;
+}
+
+.resource-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }

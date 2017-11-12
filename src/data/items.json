@@ -1,0 +1,84 @@
+[
+  {
+    "name": "item1",
+    "description": "this is the description for item 1",
+    "costs": {
+      "credits": 1000,
+      "resources": {
+        "resource1": 125,
+        "resource2": 50,
+        "resource3": 1000,
+        "resource4": 200
+      }
+    },
+    "buildTime": 60,
+    "buildTimeRemaining": 60,
+    "rushCost": 1,
+    "state": "build"
+  },
+  {
+    "name": "item2",
+    "description": "this is the description for item 2",
+    "costs": {
+      "credits": 2000,
+      "resources": {
+        "resource1": 150,
+        "resource4": 200,
+        "resource5": 10,
+        "resource6": 5
+      }
+    },
+    "buildTime": 700,
+    "buildTimeRemaining": 700,
+    "rushCost": 1,
+    "state": "build"
+  },
+  {
+    "name": "item3",
+    "description": "this is the description for item 3",
+    "costs": {
+      "credits": 500,
+      "resources": {
+        "resource2": 30,
+        "resource4": 375,
+        "resource5": 50
+      }
+    },
+    "buildTime": 300,
+    "buildTimeRemaining": 300,
+    "rushCost": 1,
+    "state": "build"
+  },
+  {
+    "name": "item4",
+    "description": "this is the description for item 4",
+    "costs": {
+      "credits": 1500,
+      "resources": {
+        "resource3": 1,
+        "resource4": 150,
+        "resource5": 40,
+        "resource6": 35
+      }
+    },
+    "buildTime": 5000,
+    "buildTimeRemaining": 5000,
+    "rushCost": 1,
+    "state": "build"
+  },
+  {
+    "name": "item5",
+    "description": "this is the description for item 5",
+    "costs": {
+      "credits": 5000,
+      "resources": {
+        "resource5": 10,
+        "resource6": 20
+      }
+    },
+    "buildTime": 120,
+    "buildTimeRemaining": 120,
+    "rushCost": 1,
+    "state": "build"
+  }
+]

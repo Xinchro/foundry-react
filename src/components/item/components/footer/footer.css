@@ -4,4 +4,14 @@
   padding: 0;
   margin: 0;
   background: rgba(150,150,150,0.5);
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.build-time {
+  justify-self: right;
+}
+
+.command {
+  justify-self: left;
 }

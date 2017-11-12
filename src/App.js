@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import logo from './logo.svg'
-import './App.css'
-import { Item } from './components/index.js'
+import css from './App.css'
+import { ItemList } from './components/index.js'
 
 class App extends Component {
   render() {
     return (
-      <section className="App">
-        <Item name="oh" />
+      <section className={css['app']}>
+      <header className={css['header']}><span className={css['title']}>foundry system</span></header>
+        <ItemList className={css['item-list']}/>
       </section>
     );
   }
