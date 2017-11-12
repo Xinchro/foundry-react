@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import "./body.css"
 
 class Body extends Component {
   render() {
-    return <p>This is a body</p>
+    return <p className="item-body">This is a body</p>
   }
 }
 
