@@ -43,6 +43,7 @@
     "whatwg-fetch": "2.0.3"
   },
   "scripts": {
+    "sync": "aws s3 sync build s3://foundry.xinchronize.com",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
