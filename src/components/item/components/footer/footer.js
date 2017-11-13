@@ -29,6 +29,9 @@ class Footer extends Component {
         <span className={css['command']}>
         { this.props.state }
         </span>
+        <span className={css['credit-cost']}>
+        {this.props.costs}c
+        </span>
         <span className={css['build-time']}>{this.calcBuildTime(this.props.buildTime)}</span>
       </footer>
     )

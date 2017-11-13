@@ -5,11 +5,15 @@
   margin: 0;
   background: rgba(150,150,150,0.5);
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto auto auto;
 }
 
 .build-time {
   justify-self: right;
+}
+
+.credit-cost {
+  color: teal;
 }
 
 .command {

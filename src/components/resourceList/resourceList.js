@@ -1,33 +1,30 @@
 import React, { Component } from "react"
 import css from "./resourceList.css"
-import initialResources from "../../data/initialResources.json"
 
 class ResourceList extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      resources: initialResources
-    }
+    
     this.handleChange = this.handleChange.bind(this)
   }
 
-  handleChange(event) {
-    let resources = this.state.resources
-    resources[event.target.name] = event.target.value
-    this.setState({resources})
+  handleChange(e) {
+    
   }
 
   render() {
     let arr = []
-    for(let e in initialResources) {
+    for(let res in this.props.resources) {
       arr.push(
         <li className={css.resource}> 
-          <span>{ e }:</span>
+          <span>{ res }:</span>
           <input
             type="text"
-            value={initialResources[e]}
-            name={e}
-            onChange={this.handleChange}
+            value={this.props.resources[res]}
+            name={res}
+            onChange={(e) => {
+              this.props.modifyResource(res, e.target.value)
+            }}
           />
         </li>
       )
