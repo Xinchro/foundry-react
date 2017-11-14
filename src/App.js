@@ -25,6 +25,7 @@ class App extends Component {
   consumeResources(costs) {
     let consumed = true
     let res = this.getResources()
+    let tempRes = {}
 
     loop:
     for(let el in costs) {
@@ -33,22 +34,24 @@ class App extends Component {
           let result = this.consumeResource(res, costs[el][res])
 
           if(!result[0]) {
+            consumed = false
             break loop
           } else {
-            res = result[1]
+            tempRes = result[1]
           }
         }
       } else {
         let result = this.consumeResource(el, costs[el])
         if(!result[0]) {
+          consumed = false
           break loop
         } else {
-          res = result[1]
+          tempRes = result[1]
         }
       }
     }
 
-    consumed ? this.setState({resources:res}) : ""
+    consumed ? this.setState({resources:tempRes}) : ""
 
     return consumed
   }
@@ -56,6 +59,7 @@ class App extends Component {
   consumeResource(resource, amount) {
     let res = this.getResources()
     let consumed = true
+
 
     consumed = this.subtract(res[resource], amount)[0]
 
