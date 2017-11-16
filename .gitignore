@@ -7,6 +7,9 @@
 # production
 /build
 
+# tests, for now
+src/components/tests
+
 # misc
 .DS_Store
 .env.local

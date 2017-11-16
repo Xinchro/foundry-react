@@ -9,7 +9,8 @@ class ItemList extends Component {
       <section className={css['item-list']}>
         {
           items.map((e, i) => {
-            return <Item name={e.name} desc={e.description} buildTime={e.buildTimeRemaining} costs={e.costs} state={e.state} consumeResources={this.props.consumeResources} />
+            return <Item name={e.name} desc={e.description} buildTime={e.buildTimeRemaining} costs={e.costs} state={e.state} consumeResources={this.props.consumeResources}
+              key={e.name} />
           })
         }
       </section>

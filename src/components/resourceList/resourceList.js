@@ -16,7 +16,7 @@ class ResourceList extends Component {
     let arr = []
     for(let res in this.props.resources) {
       arr.push(
-        <li className={css.resource}> 
+        <li className={css.resource} key={res}> 
           <span>{ res }:</span>
           <input
             type="text"
@@ -32,7 +32,7 @@ class ResourceList extends Component {
 
     return (
       <ul className={css['resource-list']}>
-        {arr}
+        { arr }
       </ul>
     )
   }

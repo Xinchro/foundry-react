@@ -11,12 +11,13 @@ class Item extends Component {
 
   handleClick(e) {
     e.preventDefault()
+    console.log(e)
     this.props.consumeResources(this.props.costs)
   }
 
   render() {
     return (
-      <section className={css['item']} onClick={this.handleClick}>
+      <section className={ css['item'] } onClick={this.handleClick}>
         <Header name={this.props.name} />
         <Body desc={this.props.desc} resources={this.props.costs.resources} />
         <Footer buildTime={this.props.buildTime} costs={this.props.costs.credits} state={this.props.state}/>

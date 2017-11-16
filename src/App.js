@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import logo from './logo.svg'
 import css from './App.css'
 import { ItemList, ResourceList } from './components/index.js'
 import initialResources from "./data/initialResources.json"
@@ -24,12 +23,11 @@ class App extends Component {
 
   consumeResources(costs) {
     let consumed = true
-    let res = this.getResources()
     let tempRes = {}
 
     loop:
     for(let el in costs) {
-      if(typeof(costs[el]) == "object") {
+      if(typeof(costs[el]) === "object") {
         for(let res in costs[el]) {
           let result = this.consumeResource(res, costs[el][res])
 
@@ -44,14 +42,14 @@ class App extends Component {
         let result = this.consumeResource(el, costs[el])
         if(!result[0]) {
           consumed = false
-          break loop
+          break
         } else {
           tempRes = result[1]
         }
       }
     }
 
-    consumed ? this.setState({resources:tempRes}) : ""
+    if(consumed) this.setState({resources:tempRes})
 
     return consumed
   }
@@ -80,7 +78,7 @@ class App extends Component {
   modifyResource(resource, amount) {
     let res = this.state.resources
 
-    amount = (typeof(amount) === "string") ? parseInt(amount) : amount
+    amount = (typeof(amount) === "string") ? parseInt(amount, 10) : amount
 
     switch(resource) {
       case "credits":
@@ -104,6 +102,8 @@ class App extends Component {
       case "resource6":
         res.resource6 = amount
         break
+      default:
+        console.error("invalid resource type")
     }
 
     this.setState({resources:res})
