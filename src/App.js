@@ -71,7 +71,6 @@ class App extends Component {
   }
 
   claimItem(el) {
-    // console.log(el)
     el.buildTimeRemaining = el.buildTime
     el.buildState = "build"
 
@@ -132,7 +131,6 @@ class App extends Component {
     let res = this.getResources()
     let consumed = true
 
-
     consumed = this.subtract(res[resource], amount)[0]
 
     res[resource] = this.subtract(res[resource], amount)[1]
@@ -192,17 +190,17 @@ class App extends Component {
 
   addNewBlueprint(id, name, description, costs, buildTime, startBuildTime, rushCost, buildState) {
     this.setState({items: this.state.items.push({
-          "id": id,
-          "name": name,
-          "description": description,
-          "costs": costs,
-          "buildTime": buildTime,
-          "startBuildTime": startBuildTime,
-          "startBuildRemaining": startBuildTime,
-          "rushCost": rushCost,
-          "buildState": buildState
-        })
+        "id": id,
+        "name": name,
+        "description": description,
+        "costs": costs,
+        "buildTime": buildTime,
+        "startBuildTime": startBuildTime,
+        "startBuildRemaining": startBuildTime,
+        "rushCost": rushCost,
+        "buildState": buildState
       })
+    })
   }
 
   modifyResource(resource, amount) {
@@ -279,7 +277,7 @@ class App extends Component {
           </section>
         </section>
       </section>
-    );
+    )
   }
 }
 
