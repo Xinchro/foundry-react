@@ -1,5 +1,4 @@
 import React, { Component } from "react"
-import items from "../../data/items.json"
 import { Item } from "../item/item.js"
 import css from "./itemList.css"
 
@@ -8,9 +7,17 @@ class ItemList extends Component {
     return (
       <section className={css['item-list']}>
         {
-          items.map((e, i) => {
-            return <Item name={e.name} desc={e.description} buildTime={e.buildTimeRemaining} costs={e.costs} state={e.state} consumeResources={this.props.consumeResources}
-              key={e.name} />
+          this.props.items.map((e, i) => {
+            return <Item 
+              id={ e.id } 
+              name={ e.name } 
+              desc={ e.description } 
+              buildTime={ e.buildTimeRemaining } 
+              costs={ e.costs } 
+              buildState={ e.buildState } 
+              consumeResources={ this.props.consumeResources } 
+              key={ e.name } 
+              buildItem={ this.props.buildItem }/>
           })
         }
       </section>

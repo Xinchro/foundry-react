@@ -19,24 +19,30 @@ class Body extends Component {
     }
 
     const mapping = arr.map((e) => 
-      <li key={ e.name } className={ css.resource }>{ e.name }- { e.val }</li>
+      <li key={ e.name } className={ css.resource }>{ e.name }: { e.val }</li>
     )
 
     return ( 
-      <ul className={css['resource-list']}>
+      <ul className={ css['resource-list'] }>
         { mapping }
       </ul>
     )
   }
 
   render() {
-    
 
     return (
-      <section className={css.body}>
-        <img src="https://placeimg.com/200/200/any" alt="item icon" />
-        <section className={css['data']}>
-          <p>{this.props.desc}</p>
+      <section 
+        className={ css.body }
+      >
+        <img 
+          src="https://placeimg.com/200/200/any" 
+          alt="item icon" 
+        />
+        <section 
+          className={ css['data'] }
+        >
+          <p>{ this.props.desc }</p>
           { this.getList() }
         </section>
       </section>

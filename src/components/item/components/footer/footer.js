@@ -25,14 +25,24 @@ class Footer extends Component {
 
   render() {
     return (
-      <footer className={css['footer']}>
-        <span className={css['command']}>
-        { this.props.state }
+      <footer 
+        className={ css['footer'] }
+      >
+        <span 
+          className={ css['command'] }
+        >
+          { this.props.buildState }
         </span>
-        <span className={css['credit-cost']}>
-        { this.props.costs }c
+        <span 
+          className={ css['credit-cost'] }
+        >
+          { this.props.costs }c
         </span>
-        <span className={ css['build-time'] }>{ this.calcBuildTime(this.props.buildTime) }</span>
+        <span 
+          className={ css['build-time'] }
+        >
+          { this.calcBuildTime(this.props.buildTime) }
+        </span>
       </footer>
     )
   }

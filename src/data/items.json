@@ -1,6 +1,7 @@
 [
   {
-    "name": "item1",
+    "id": "item1",
+    "name": "item 1",
     "description": "this is the description for item 1",
     "costs": {
       "credits": 1000,
@@ -11,13 +12,15 @@
         "resource4": 200
       }
     },
-    "buildTime": 60,
-    "buildTimeRemaining": 60,
+    "buildTime": 1,
+    "buildTimeRemaining": 1,
+    "startBuildTime": "2000-01-01T00:00:00.00Z",
     "rushCost": 1,
-    "state": "build"
+    "buildState": "build"
   },
   {
-    "name": "item2",
+    "id": "item2",
+    "name": "item 2",
     "description": "this is the description for item 2",
     "costs": {
       "credits": 2000,
@@ -30,11 +33,13 @@
     },
     "buildTime": 700,
     "buildTimeRemaining": 700,
+    "startBuildTime": "2000-01-01T00:00:00.00Z",
     "rushCost": 1,
-    "state": "build"
+    "buildState": "build"
   },
   {
-    "name": "item3",
+    "id": "item3",
+    "name": "item 3",
     "description": "this is the description for item 3",
     "costs": {
       "credits": 500,
@@ -46,11 +51,13 @@
     },
     "buildTime": 300,
     "buildTimeRemaining": 300,
+    "startBuildTime": "2000-01-01T00:00:00.00Z",
     "rushCost": 1,
-    "state": "build"
+    "buildState": "build"
   },
   {
-    "name": "item4",
+    "id": "item4",
+    "name": "item 4",
     "description": "this is the description for item 4",
     "costs": {
       "credits": 1500,
@@ -63,11 +70,13 @@
     },
     "buildTime": 5000,
     "buildTimeRemaining": 5000,
+    "startBuildTime": "2000-01-01T00:00:00.00Z",
     "rushCost": 1,
-    "state": "build"
+    "buildState": "build"
   },
   {
-    "name": "item5",
+    "id": "item5",
+    "name": "item 5",
     "description": "this is the description for item 5",
     "costs": {
       "credits": 5000,
@@ -78,7 +87,8 @@
     },
     "buildTime": 120,
     "buildTimeRemaining": 120,
+    "startBuildTime": "2000-01-01T00:00:00.00Z",
     "rushCost": 1,
-    "state": "build"
+    "buildState": "build"
   }
 ]

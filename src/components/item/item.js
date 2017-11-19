@@ -7,20 +7,36 @@ class Item extends Component {
     super(props)
 
     this.handleClick = this.handleClick.bind(this)
+    this.build = this.build.bind(this)
   }
 
   handleClick(e) {
     e.preventDefault()
-    console.log(e)
-    this.props.consumeResources(this.props.costs)
+    this.build()
+  }
+
+  build() {
+    this.props.buildItem(this.props.id, this.props.costs)
   }
 
   render() {
     return (
-      <section className={ css['item'] } onClick={this.handleClick}>
-        <Header name={this.props.name} />
-        <Body desc={this.props.desc} resources={this.props.costs.resources} />
-        <Footer buildTime={this.props.buildTime} costs={this.props.costs.credits} state={this.props.state}/>
+      <section 
+        className={ css['item'] } 
+        onClick={ this.handleClick }
+      >
+        <Header 
+          name={ this.props.name } 
+        />
+        <Body 
+          desc={ this.props.desc } 
+          resources={ this.props.costs.resources } 
+        />
+        <Footer 
+          buildTime={ this.props.buildTime } 
+          costs={ this.props.costs.credits } 
+          buildState={ this.props.buildState } 
+        />
       </section>
     )
   }
