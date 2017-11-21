@@ -3,6 +3,7 @@ import css from './App.css'
 import { ItemList, ResourceList } from './components/index.js'
 import initialResources from "./data/initialResources.json"
 import items from "./data/items.json"
+import { subtract } from "./utils/index.js"
 
 
 class App extends Component {
@@ -96,13 +97,13 @@ class App extends Component {
 
   consumeResources(costs) {
     let consumed = true
-    let tempRes = {}
+    let tempRes = JSON.parse(JSON.stringify(this.getResources()))
 
     loop:
     for(let el in costs) {
       if(typeof(costs[el]) === "object") {
         for(let res in costs[el]) {
-          let result = this.consumeResource(res, costs[el][res])
+          let result = this.consumeResource(tempRes, res, costs[el][res])
 
           if(!result[0]) {
             consumed = false
@@ -112,7 +113,7 @@ class App extends Component {
           }
         }
       } else {
-        let result = this.consumeResource(el, costs[el])
+        let result = this.consumeResource(tempRes, el, costs[el])
         if(!result[0]) {
           consumed = false
           break
@@ -127,24 +128,15 @@ class App extends Component {
     return consumed
   }
 
-  consumeResource(resource, amount) {
-    let res = this.getResources()
+  consumeResource(pool, resource, amount) {
+    let res = pool
     let consumed = true
 
-    consumed = this.subtract(res[resource], amount)[0]
+    consumed = subtract(res[resource], amount)[0]
 
-    res[resource] = this.subtract(res[resource], amount)[1]
+    res[resource] = subtract(res[resource], amount)[1]
 
     return [consumed, res]
-  }
-
-  subtract(bank, amount) {
-    if(bank - amount >= 0) {
-      bank = bank - amount
-      return [true, bank]
-    } else {
-      return [false, bank]
-    }
   }
 
   checkBuildTimeDone(time, dur) {
@@ -177,7 +169,6 @@ class App extends Component {
         count: item.count ? item.count += 1 : 1
       })
     }
-
 
     this.setState({ inventory: inventory })
   }
