@@ -244,7 +244,7 @@ class App extends Component {
           <span 
             className={ css['title'] }
           >
-              foundry system
+              (Warframe) Foundry System
           </span>
         </header>
         <section 
